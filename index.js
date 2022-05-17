@@ -25,7 +25,8 @@ async function dialog(message,options){
     let osa = 'display dialog ' + '"' + message + '"';
 
     if(options.buttons.length > 1){
-        osa += ' buttons {"' + options.buttons[0] + '","' + options.buttons[1] + '","' + options.buttons[2] + '"}';
+        osa += ' buttons {"';
+        osa += options.buttons[0] + '","' + options.buttons[1] + '","' + options.buttons[2] + '"}';
     } else if(options.buttons.length == 1){
         osa += ' buttons {"' + options.buttons[0] + '"}';
     }
