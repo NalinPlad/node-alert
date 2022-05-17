@@ -32,10 +32,21 @@ async function dialog(message,options){
            if(button < options.buttons.length-1){
                osa += options.buttons[button] + '","';
            } else {
-               osa += options.buttons[button] + '"}';
+               osa += options.buttons[button] + '"} ';
            }
            
         }
+    }
+
+    // Set Default Buttons
+    if (options.defaultbutton != '' && options.cancelbutton != ''){
+        osa += 'default button "' + options.defaultbutton +
+        '" cancel button "' + options.cancelbutton + '" ';
+    }
+
+    // Set Icon
+    if(options.icon != ''){
+        osa += 'with icon ' + options.icon;
     }
 
     await roc(osa)
@@ -46,7 +57,7 @@ async function dialog(message,options){
 const opts = new popup_options(
     ['Hi!',"hello","hee"],
     'Hi!',
-    'No!',
-    'caution',
+    'hee',
+    '',
     5)
 dialog('Hello',opts)
