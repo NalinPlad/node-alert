@@ -48,4 +48,4 @@ async function dialog(message, options) {
   await roc(osa);
 }
 
-const opts = new popup_options(["Hi!", "hello", "hee"], "Hi!", "hee", "", 5);
+const opts = new popup_options(['Yes!', 'No'], 'Yes','', '', 5);
