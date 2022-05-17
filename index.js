@@ -24,19 +24,27 @@ class popup_options{
 async function dialog(message,options){
     let osa = 'display dialog ' + '"' + message + '"';
 
-    if(options.buttons.length > 1){
+    // Set Buttons
+    if(options.buttons.length > 0){
         osa += ' buttons {"';
-        osa += options.buttons[0] + '","' + options.buttons[1] + '","' + options.buttons[2] + '"}';
-    } else if(options.buttons.length == 1){
-        osa += ' buttons {"' + options.buttons[0] + '"}';
+        
+        for(button in options.buttons){
+           if(button < options.buttons.length-1){
+               osa += options.buttons[button] + '","';
+           } else {
+               osa += options.buttons[button] + '"}';
+           }
+           
+        }
     }
+
     await roc(osa)
     
 }
 
 
 const opts = new popup_options(
-    ['Hi!',"No!"],
+    ['Hi!',"hello","hee"],
     'Hi!',
     'No!',
     'caution',
