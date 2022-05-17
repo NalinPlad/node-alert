@@ -1,4 +1,4 @@
-import {execa} from 'execa'; 
+const execa = require('execa');
 
 async function roc(command){
     await execa('osascript', ['-e', command])
@@ -9,7 +9,11 @@ class popup_options{
         buttons,
         icon,
         giveupafter
-    )
+    ){
+        this.buttons = buttons;
+        this.icon = icon;
+        this.giveupafter = giveupafter;
+    }
 }
 
 const opts = new popup_options(['yes','no'],'caution',5)

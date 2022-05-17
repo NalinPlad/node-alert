@@ -1,6 +1,5 @@
 {
   "name": "node-alert",
-  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +7,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "notmysql",
-  "license": "MIT",
-  "dependencies": {
-    "execa": "^6.1.0"
-  }
+  "license": "MIT"
 }
