@@ -1,8 +1,18 @@
-const execa = require("execa");
+const { exec } = require("child_process");
 
 // Run osascript
 async function roc(command) {
-  return await execa("osascript", ["-e", command]).stdout;
+  exec("osascript -e '" + command + "'", (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+    }
+    return stdout;
+});
 }
 
 class popup_options {
