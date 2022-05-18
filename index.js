@@ -11,7 +11,7 @@ async function roc(command) {
         console.log(`stderr: ${stderr}`);
         return;
     }
-    return stdout;
+    console.log(stdout);
 });
 }
 
@@ -57,9 +57,5 @@ async function dialog(message, options) {
       }
   }
 
-  await console.log(roc(osa));
+  roc(osa);
 }
-
-const opts = new popup_options([], '','', '', 0);
-
-dialog('GUYS!',opts);
